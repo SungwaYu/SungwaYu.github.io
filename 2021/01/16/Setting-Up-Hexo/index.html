@@ -175,12 +175,14 @@
                 <div class="info">
                     <div class="author">
                         <span>Sungwa Yu</span>
-                        <span class="level">Lv1</span>
                     </div>
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i> 2021-01-16 20:53:40
+        <i class="fas fa-edit"></i> Published 01-16-2021
+    </span>
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i> Modified 01-21-2021
     </span>
     
         <span class="article-categories article-meta-item">
@@ -214,7 +216,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>854 Words</span>
+            <i class="fas fa-file-word"></i> <span>877 Words</span>
         </span>
     
     
@@ -284,9 +286,14 @@
 
 
 <h1 id="Publish"><a href="#Publish" class="headerlink" title="Publish"></a>Publish</h1><ul>
-<li>New post: <code>hexo new &lt;title&gt;</code></li>
-<li>New draft: <code>hexo new draft &lt;title&gt;</code>. When the draft ready, run <code>hexo publish &lt;title&gt;</code> to publish.</li>
-<li>Ex. <code>hexo new hello-world</code>, title name needs to be lower case, with spaces replaced by hyphens. </li>
+<li><p>New post: <code>hexo new &lt;title&gt;</code></p>
+</li>
+<li><p>New draft: <code>hexo new draft &lt;title&gt;</code>. When the draft ready, run <code>hexo publish &lt;title&gt;</code> to publish.</p>
+</li>
+<li><p>Ex. <code>hexo new &quot;Hello World&quot;</code>.</p>
+</li>
+<li><p>Delete post/draft: Simply go to <code>_post</code> or <code>draft</code> folder and delete the .md file (and the the its asset folder). </p>
+</li>
 </ul>
 <h1 id="Deploy-to-GitHub-Pages"><a href="#Deploy-to-GitHub-Pages" class="headerlink" title="Deploy to GitHub Pages"></a>Deploy to GitHub Pages</h1><h3 id="Install-Plug-in"><a href="#Install-Plug-in" class="headerlink" title="Install Plug-in"></a>Install Plug-in</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git <span class="comment">--save</span></span><br><span class="line">$ npm install hexo-<span class="keyword">server</span> <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
 <h3 id="Configure-Git"><a href="#Configure-Git" class="headerlink" title="Configure Git"></a>Configure Git</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">config</span> --<span class="keyword">global</span> user<span class="variable">.name</span> <span class="string">&quot;Your_user_name&quot;</span></span><br><span class="line">$ git <span class="keyword">config</span> --<span class="keyword">global</span> user<span class="variable">.email</span> <span class="string">&quot;Your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
@@ -299,8 +306,11 @@
 </blockquote>
 <p>Edit <code>/scaffolds/post.md</code> to</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> &#123;&#123; <span class="string">title</span> &#125;&#125;</span><br><span class="line"><span class="attr">date:</span> &#123;&#123; <span class="string">date</span> &#125;&#125;</span><br><span class="line"><span class="attr">updated:</span> &#123;&#123; <span class="string">date</span> &#125;&#125;</span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="attr">tags:</span></span><br></pre></td></tr></table></figure>
-<p>Edit <code>/scaffolds/draft.md</code> to (Need to confirm)</p>
+<p>Edit <code>/scaffolds/draft.md</code> to</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> &#123;&#123; <span class="string">title</span> &#125;&#125;</span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="attr">tags:</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>When publish from draft to post, it will automatically add <code>date</code> and <code>updated</code> front-matter.</p>
+</blockquote>
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Example: </p>
 <blockquote>
 <p>In articles.</p>
@@ -322,6 +332,21 @@
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/01/21/Hexo-Theme-Personal-Settings/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Hexo Theme Personal Settings</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
