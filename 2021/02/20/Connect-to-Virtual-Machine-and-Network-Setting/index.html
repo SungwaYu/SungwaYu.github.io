@@ -9,7 +9,7 @@
     
     <title>
         
-            Hexo Theme Personal Settings |
+            Connect to Virtual Machine and Network Setting |
         
         Sungwa&#39;s Blog
     </title>
@@ -164,7 +164,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Hexo Theme Personal Settings</span>
+            <span class="title-hover-animation">Connect to Virtual Machine and Network Setting</span>
         </div>
 
         
@@ -179,10 +179,10 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i> Published 01-21-2021
+        <i class="fas fa-edit"></i> Published 02-20-2021
     </span>
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i> Modified 01-21-2021
+        <i class="fas fa-edit"></i> Modified 02-20-2021
     </span>
     
         <span class="article-categories article-meta-item">
@@ -194,7 +194,7 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/Note/Hexo/">Hexo</a>
+                        &gt; <a href="/categories/Note/Tools/">Tools</a>
                     </li>
                 
             </ul>
@@ -206,7 +206,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Hexo/">Hexo</a>
+                        <a href="/tags/VM/">VM</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/SSH/">SSH</a>
                     </li>
                 
             </ul>
@@ -216,7 +220,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>88 Words</span>
+            <i class="fas fa-file-word"></i> <span>258 Words</span>
         </span>
     
     
@@ -237,35 +241,42 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><p>Change</p>
-<p><img src="i1.png" alt="image-1"></p>
-<p>to</p>
-<p><img src="i2.png" alt="image-2"></p>
-<h2 id="Adding-Update-Date"><a href="#Adding-Update-Date" class="headerlink" title="Adding Update Date"></a>Adding Update Date</h2><ol>
-<li>Go to blowser and use the “inspect” feature to locate the <code>&lt;div&gt;</code>.</li>
-<li>Find it in the theme folder.</li>
-<li>For my theme, I found the date infomation in <code>themes/keep/layout/_partial/article-meta-info.ejs</code>.</li>
-</ol>
-<p>Change</p>
-<p><img src="i3.png" alt="image-3"></p>
-<p>to</p>
-<p><img src="i4.png" alt="image-4"></p>
+            <h2 id="Lookup-Host-IP-Address"><a href="#Lookup-Host-IP-Address" class="headerlink" title="Lookup Host IP Address"></a>Lookup Host IP Address</h2><p>Command: <code>ipconfig getifaddr en0</code></p>
 <blockquote>
-<ol>
-<li><p>Added a new <code>&lt;span&gt;</code></p>
-</li>
-<li><p>Formatted the date</p>
-</li>
-<li><p>used the <code>updated</code> front-matter value as the update date</p>
-</li>
-<li><p>Added words “Published” and “Modified”</p>
-</li>
-</ol>
+<p>Or <code>ifconfig</code> and find it after “en0:”</p>
 </blockquote>
-<h2 id="Remove-the-“Lv1”-Icon"><a href="#Remove-the-“Lv1”-Icon" class="headerlink" title="Remove the “Lv1” Icon"></a>Remove the “Lv1” Icon</h2><p>Step same as above.</p>
-<p>I found the icon located at <code>themes/keep/layout/article-content.ejs</code>.</p>
-<p>Delete</p>
-<p><img src="i5.png" alt="i5"></p>
+<p>Mine is: <code>10.0.0.3</code>.</p>
+<h2 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h2><blockquote>
+<ul>
+<li><p>After installed the system image</p>
+</li>
+<li><p>OS: Mac</p>
+</li>
+<li><p>VM OS: CentOS7</p>
+</li>
+<li><p>Software: VMware Fusion</p>
+</li>
+</ul>
+</blockquote>
+<p>Virtual machine cannot connect to internet and host.</p>
+<p><code>ping www.google.com</code> and <code>ping 10.0.0.3</code> not working.</p>
+<h2 id="Procedure"><a href="#Procedure" class="headerlink" title="Procedure"></a>Procedure</h2><ol>
+<li>On the top, choose<code>Virtual Machine</code>&gt;<code>Network Adapter</code>&gt;<code>Network Adapter Settings...</code></li>
+<li>Choose <code>Bridged Networking</code>&gt;<code>Wi-Fi</code></li>
+<li>Go to VM’s terminal, enter <code>dhclient</code>, enter, then type <code>ifconfig</code>, remember the ip address under “ens33”: “inet”. For example, <code>10.0.0.195</code>.</li>
+<li>In VM’s terminal, enter <code>vim /etc/sysconfig/network-scripts/ifcfg-ens33</code>, change the file to </li>
+</ol>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">TYPE</span>=Ethernet</span><br><span class="line"><span class="attr">PROXY_METHOD</span>=none</span><br><span class="line"><span class="attr">BROWSER_ONLY</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">BOOTPROTO</span>=static</span><br><span class="line"><span class="attr">DEFROUTE</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">IPV4_FAILURE_FATAL</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">IPV6INIT</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">IPV6_AUTOCONF</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">IPV6_DEFROUTE</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">IPV6_FAILURE_FATAL</span>=<span class="literal">no</span></span><br><span class="line"><span class="attr">IPV6_ADDR_GEN_MODE</span>=stable-privacy</span><br><span class="line"><span class="attr">NAME</span>=ens33</span><br><span class="line"><span class="attr">UUID</span>=<span class="number">824</span>ec4bd-a9ae-<span class="number">4410</span>-<span class="number">8346</span>-<span class="number">17</span>ce7f3dd111</span><br><span class="line"><span class="attr">DEVICE</span>=ens33</span><br><span class="line"><span class="attr">ONBOOT</span>=<span class="literal">yes</span></span><br><span class="line"><span class="attr">IPADDR</span>=<span class="number">10.0</span>.<span class="number">0.195</span></span><br><span class="line"><span class="attr">NETMASK</span>=<span class="number">255.255</span>.<span class="number">255.0</span></span><br><span class="line"><span class="attr">GATEWAY</span>=<span class="number">192.168</span>.<span class="number">31.1</span></span><br><span class="line"><span class="attr">DNS1</span>=<span class="number">119.29</span>.<span class="number">29.29</span></span><br></pre></td></tr></table></figure>
+<p>Note: Pay attention to <code>BOOTPROTO=static</code>, <code>ONBOOT=yes</code>, and the last 4 lines. The <code>IPADDR</code> is what we got in step 3.</p>
+<ol start="5">
+<li>In VM’s terminal, <code>systemctl restart network.service</code></li>
+</ol>
+<p><strong><em>Now, <code>ping www.google.com</code> and <code>ping 10.0.0.3</code> should work.</em></strong></p>
+<ol start="6">
+<li>In host’s terminal, <code>ping 10.0.0.195</code> should work as well.</li>
+</ol>
+<h2 id="SSH-to-VM-on-Mac"><a href="#SSH-to-VM-on-Mac" class="headerlink" title="SSH to VM on Mac"></a>SSH to VM on Mac</h2><p>In host terminal, enter <code>ssh user@ip-addr</code> (usually “user” is “root”). For me, it is <code>ssh root@10.0.0.195</code>. Next, it will ask you to enter the root password. Then enter “yes” if it is the first time. </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/WeZLtfrMdnISpX3v5WpJfA" >https://mp.weixin.qq.com/s/WeZLtfrMdnISpX3v5WpJfA<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
 
@@ -274,29 +285,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/01/29/Make-the-Site-Visible-on-Google/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Make the Site Visible on Google</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/01/16/Setting-Up-Hexo/"
+                           href="/2021/02/02/This-Site-is-Just-Used-to-Take-Note/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Setting Up Hexo</span>
+                                <span class="post-nav-title-item">This Site is Just Used to Take Note</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -411,7 +407,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Objective"><span class="nav-number">1.</span> <span class="nav-text">Objective</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-Update-Date"><span class="nav-number">1.1.</span> <span class="nav-text">Adding Update Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-the-%E2%80%9CLv1%E2%80%9D-Icon"><span class="nav-number">1.2.</span> <span class="nav-text">Remove the “Lv1” Icon</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lookup-Host-IP-Address"><span class="nav-number">1.</span> <span class="nav-text">Lookup Host IP Address</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problems"><span class="nav-number">2.</span> <span class="nav-text">Problems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Procedure"><span class="nav-number">3.</span> <span class="nav-text">Procedure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-to-VM-on-Mac"><span class="nav-number">4.</span> <span class="nav-text">SSH to VM on Mac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol>
     </div>
 </div>
         </aside>

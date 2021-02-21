@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yusungwa.com/2021/02/20/Connect-to-Virtual-Machine-and-Network-Setting/</loc>
+    
+    <lastmod>2021-02-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/2021/02/02/This-Site-is-Just-Used-to-Take-Note/</loc>
+    
+    <lastmod>2021-02-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yusungwa.com/2021/01/29/Make-the-Site-Visible-on-Google/</loc>
     
     <lastmod>2021-01-29</lastmod>
@@ -53,7 +67,7 @@
 
   <url>
     <loc>https://yusungwa.com/</loc>
-    <lastmod>2021-01-29</lastmod>
+    <lastmod>2021-02-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,7 +75,21 @@
   
   <url>
     <loc>https://yusungwa.com/tags/Hexo/</loc>
-    <lastmod>2021-01-29</lastmod>
+    <lastmod>2021-02-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/tags/VM/</loc>
+    <lastmod>2021-02-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/tags/SSH/</loc>
+    <lastmod>2021-02-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -70,14 +98,21 @@
   
   <url>
     <loc>https://yusungwa.com/categories/Note/</loc>
-    <lastmod>2021-01-29</lastmod>
+    <lastmod>2021-02-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yusungwa.com/categories/Note/Hexo/</loc>
-    <lastmod>2021-01-29</lastmod>
+    <lastmod>2021-02-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/categories/Note/Tools/</loc>
+    <lastmod>2021-02-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
