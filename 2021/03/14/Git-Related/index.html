@@ -9,7 +9,7 @@
     
     <title>
         
-            Archive: 2021/2 |
+            Git Related |
         
         Sungwa&#39;s Blog
     </title>
@@ -68,7 +68,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/archives"
                             >
                                 ARCHIVES
@@ -126,7 +126,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/archives">ARCHIVES</a>
                 </li>
             
@@ -161,87 +161,155 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Git Related</span>
+        </div>
+
         
-<div class="archive-list-container">
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Sungwa Yu</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i> Published 03-14-2021
+    </span>
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i> Modified 03-14-2021
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2021</span>
-                <span class="archive-year-post-count">(9)</span>
-            </div>
-            <ul class="article-list">
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>
+            <ul>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/03/14/Matlab-Basic/"
-                        >Matlab Basic</a>
-                        <span class="article-date">03-14</span>
+                    <li>
+                        <a href="/categories/Note/">Note</a>
                     </li>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/03/14/Shortcuts/"
-                        >Shortcuts</a>
-                        <span class="article-date">03-14</span>
+                    <li>
+                        &gt; <a href="/categories/Note/Tools/">Tools</a>
                     </li>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/03/14/Git-Related/"
-                        >Git Related</a>
-                        <span class="article-date">03-14</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/02/20/Connect-to-Virtual-Machine-and-Network-Setting/"
-                        >Connect to Virtual Machine and Network Setting</a>
-                        <span class="article-date">02-20</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/01/29/Make-the-Site-Visible-on-Google/"
-                        >Make the Site Visible on Google</a>
-                        <span class="article-date">01-29</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/01/27/This-Site-is-Just-Used-to-Take-Note/"
-                        >===================  This Site is Just Used to Take Note  ==============</a>
-                        <span class="article-date">01-27</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/01/21/Hexo-Theme-Personal-Settings/"
-                        >Hexo Theme Personal Settings</a>
-                        <span class="article-date">01-21</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/01/16/Setting-Up-Hexo/"
-                        >Setting Up Hexo</a>
-                        <span class="article-date">01-16</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/01/16/hello-world/"
-                        >Hello World</a>
-                        <span class="article-date">01-16</span>
+                    <li>
+                        &gt; <a href="/categories/Note/Git/">Git</a>
                     </li>
                 
             </ul>
-        </section>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Git/">Git</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i> <span>113 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i> <span>1 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h2><p><strong><em>Stop asking for username and password</em></strong></p>
+<ol>
+<li>Find the <code>remote.origin.url</code> using the command: <code>git config -l</code></li>
+<li>Run the command: <code>git config remote.origin.url https://&#123;YOUR_USER_NAME&#125;:&#123;PASSWORD&#125;@github.com/&#123;YOUR_USER_NAME&#125;/&#123;REPOSITORY_NAME&#125;.git</code></li>
+</ol>
+<h2 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h2><p><strong><em>Create lightweight tag</em></strong></p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">tag</span> <span class="title">TAGNAME</span></span><br></pre></td></tr></table></figure>
+<p>ex. <code>git tag v1.0</code>, <code>git tag a-bc</code></p>
+<blockquote>
+<p>For more: <a class="link"   target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2/Git-Basics-Tagging" >https://git-scm.com/book/en/v2/Git-Basics-Tagging<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p><strong><em>Delete tag</em></strong></p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">tag</span> <span class="title">-d</span> TAGNAME</span><br></pre></td></tr></table></figure>
+<p><strong><em>Push tag</em></strong></p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> [<span class="built_in">origin</span>] --tags</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Better use <code>git push --follow-tags</code></p>
+<p>Reference: <a class="link"   target="_blank" rel="noopener" href="https://therightstuff.medium.com/the-rights-and-wrongs-of-git-push-with-tags-998667eaed8f" >https://therightstuff.medium.com/the-rights-and-wrongs-of-git-push-with-tags-998667eaed8f<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h2 id="Force-Push"><a href="#Force-Push" class="headerlink" title="Force Push"></a>Force Push</h2><p> <strong><em>Exist repository overwrite</em></strong></p>
+<blockquote>
+<p>Force push</p>
+</blockquote>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> -f <span class="built_in">origin</span> master</span><br></pre></td></tr></table></figure>
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/03/14/Shortcuts/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Shortcuts</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/02/20/Connect-to-Virtual-Machine-and-Network-Setting/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Connect to Virtual Machine and Network Setting</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
     </div>
 </div>
+
 
                 
             </div>
@@ -274,6 +342,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -320,6 +405,14 @@
 
     </div>
 
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Setting"><span class="nav-number">1.</span> <span class="nav-text">Setting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tag"><span class="nav-number">2.</span> <span class="nav-text">Tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Force-Push"><span class="nav-number">3.</span> <span class="nav-text">Force Push</span></a></li></ol>
+    </div>
+</div>
+        </aside>
     
 
     <div class="image-viewer-container">
@@ -389,6 +482,14 @@
 
 
 <div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
     
 </div>
 
