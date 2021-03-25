@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Sungwa Yu">
+    
+    <title>
+        
+            MySQL Basic |
+        
+        Sungwa&#39;s Blog
+    </title>
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"yusungwa.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Hello World"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":"auto"},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.3.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Sungwa&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content normal-code-theme">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">MySQL Basic</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Sungwa Yu</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i> Published 03-25-2021
+    </span>
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i> Modified 03-25-2021
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Note/">Note</a>
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Note/Database/">Database</a>
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Note/Database/MySQL/">MySQL</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/MySQL/">MySQL</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Database/">Database</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i> <span>1.7k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i> <span>10 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <blockquote>
+<p>Note taken from “freeCodeCamp.org” <a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HXV3zeQKqGY&t=5101s" >YouTube video<i class="fas fa-external-link-alt"></i></a>.</p>
+<p>Crouse developed by Mike Dane from <a class="link"   target="_blank" rel="noopener" href="https://www.mikedane.com/databases/sql/creating-company-database/" >mikedane.com<i class="fas fa-external-link-alt"></i></a>.</p>
+</blockquote>
+<h1 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h1><h2 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h2><ul>
+<li>INT</li>
+<li>DECIMAL(a,b)         a: total digits    b: digits after ‘.’</li>
+<li>VARCHAR(N)</li>
+<li>BLOB </li>
+<li>DATE      </li>
+<li>TIMESTAMP</li>
+</ul>
+<h2 id="Set-Up-Table"><a href="#Set-Up-Table" class="headerlink" title="Set Up Table"></a>Set Up Table</h2><p><img src="./2021-03025-MySQL-Basic/Snipaste_2021-03-23_21-57-56.png" alt="Table"></p>
+<p>Image from “freeCodeCamp.org” <a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HXV3zeQKqGY&t=5101s" >YouTube video<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Create-Table"><a href="#Create-Table" class="headerlink" title="Create Table"></a>Create Table</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE student (</span><br><span class="line">	student_id INT PRIMARY KEY,</span><br><span class="line">  name VARCHAR(20),</span><br><span class="line">  major VARCHAR(20)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE student (</span><br><span class="line">	student_id INT,</span><br><span class="line">  name VARCHAR(20),</span><br><span class="line">  major VARCHAR(20),</span><br><span class="line">  PRIMARY KEY(student_id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="Print-Table-Data"><a href="#Print-Table-Data" class="headerlink" title="Print Table Data"></a>Print Table Data</h4><p><code>SELECT * FROM student;</code></p>
+<h3 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h3><h4 id="AUTO-INCREMENT"><a href="#AUTO-INCREMENT" class="headerlink" title="AUTO_INCREMENT"></a>AUTO_INCREMENT</h4><p>Don’t need to specify that argument and give value, it will increase the value automatically</p>
+<h4 id="NOT-NULL"><a href="#NOT-NULL" class="headerlink" title="NOT NULL"></a>NOT NULL</h4><p>Need to be initial</p>
+<h4 id="UNIQUE"><a href="#UNIQUE" class="headerlink" title="UNIQUE"></a>UNIQUE</h4><p>For that column, no two rows have the same data</p>
+<h4 id="DEFAULT"><a href="#DEFAULT" class="headerlink" title="DEFAULT"></a>DEFAULT</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE student (</span><br><span class="line">  student_id INT AUTO_INCREMENT,</span><br><span class="line">  name VARCHAR(20) NOT NULL,</span><br><span class="line">  major VARCHAR(20) UNIQUE,</span><br><span class="line">  minor VARCHAR(20) DEFAULT &#39;Undeclared&#39; </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="Describe-Table"><a href="#Describe-Table" class="headerlink" title="Describe Table"></a>Describe Table</h3><p><code>DESCRIBE student;</code></p>
+<h3 id="Delete-Table"><a href="#Delete-Table" class="headerlink" title="Delete Table"></a>Delete Table</h3><p><code>DROP TABLE student;</code></p>
+<h3 id="Modify-Table"><a href="#Modify-Table" class="headerlink" title="Modify Table"></a>Modify Table</h3><p>Add column:</p>
+<p><code>ALTER TABLE student ADD gpa DECIMAL;</code></p>
+<p>Delete column:</p>
+<p><code>ALTER TABLE student DROP COLUMN gpa;</code></p>
+<h2 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h2><p><code>INSERT INTO student VALUES(1, &#39;Jack&#39;, &#39;Biology&#39;);</code></p>
+<p>If don’t know some arguments’ value:</p>
+<p><code>INSERT INTO student(student_id, name) VALUES(1, &#39;Jack&#39;);</code></p>
+<h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE student</span><br><span class="line">SET major &#x3D; &#39;Bio&#39;</span><br><span class="line">WHERE major &#x3D; &#39;Biology&#39;;</span><br></pre></td></tr></table></figure>
+<h4 id="OR-AND-keyword-Set-multiple"><a href="#OR-AND-keyword-Set-multiple" class="headerlink" title="OR/AND keyword, Set multiple"></a>OR/AND keyword, Set multiple</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE student</span><br><span class="line">SET major &#x3D; &#39;Bio&#39;, minor &#x3D; &#39;undeclared&#39;</span><br><span class="line">WHERE major &#x3D; &#39;Biology&#39; OR major &#x3D; &#39;CS&#39;;</span><br></pre></td></tr></table></figure>
+<p>Other comparision options: =, &lt;&gt;, &gt;, &lt;, &gt;=, &lt;=</p>
+<h4 id="Update-all-row"><a href="#Update-all-row" class="headerlink" title="Update all row"></a>Update all row</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE student</span><br><span class="line">SET major &#x3D; &#39;Undeclared&#39;</span><br></pre></td></tr></table></figure>
+<h2 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h2><h4 id="Delete-all-rows"><a href="#Delete-all-rows" class="headerlink" title="Delete all rows"></a>Delete all rows</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM stduent;</span><br></pre></td></tr></table></figure>
+<h4 id="Delete-specified-rows"><a href="#Delete-specified-rows" class="headerlink" title="Delete specified rows"></a>Delete specified rows</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM stduent</span><br><span class="line">WHERE student_id &#x3D; 5;</span><br></pre></td></tr></table></figure>
+<h2 id="Basic-Queries"><a href="#Basic-Queries" class="headerlink" title="Basic Queries"></a>Basic Queries</h2><blockquote>
+<p>SELECT</p>
+</blockquote>
+<h4 id="Select-all"><a href="#Select-all" class="headerlink" title="Select all"></a>Select all</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM student;</span><br></pre></td></tr></table></figure>
+<h4 id="Select-specified-columns"><a href="#Select-specified-columns" class="headerlink" title="Select specified columns"></a>Select specified columns</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT name, major</span><br><span class="line">FROM student;</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT stduent.name, student.major</span><br><span class="line">FROM student;</span><br></pre></td></tr></table></figure>
+<h4 id="Select-by-order-column"><a href="#Select-by-order-column" class="headerlink" title="Select by order (column)"></a>Select by order (column)</h4><p>Ascending by default (ASC)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT stduent.name, student.major</span><br><span class="line">FROM student</span><br><span class="line">ORDER BY name;</span><br></pre></td></tr></table></figure>
+<p>Descending order (DESC):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT stduent.name, student.major</span><br><span class="line">FROM student</span><br><span class="line">ORDER BY name DESC;</span><br></pre></td></tr></table></figure>
+<p>More order</p>
+<blockquote>
+<p>If name the same, further order by id</p>
+</blockquote>
+<p><code>ORDER BY name, id</code> </p>
+<h4 id="LIMIT"><a href="#LIMIT" class="headerlink" title="LIMIT"></a>LIMIT</h4><p>Only get two rows</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM student</span><br><span class="line">LIMIT 2;</span><br></pre></td></tr></table></figure>
+<h4 id="IN"><a href="#IN" class="headerlink" title="IN"></a>IN</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM student</span><br><span class="line">WHERE name IN (&#39;Claire&#39;, &#39;Kate&#39;, &#39;Mike&#39;);</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Advance"><a href="#Advance" class="headerlink" title="Advance"></a>Advance</h1><p><img src="./2021-03025-MySQL-Basic/Snipaste_2021-03-23_23-14-41.png" alt="Table"></p>
+<p>Image from “freeCodeCamp.org” <a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HXV3zeQKqGY&t=5101s" >YouTube video<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE employee (</span><br><span class="line">  emp_id INT PRIMARY KEY,</span><br><span class="line">  first_name VARCHAR(40),</span><br><span class="line">  last_name VARCHAR(40),</span><br><span class="line">  birth_day DATE,</span><br><span class="line">  sex VARCHAR(1),</span><br><span class="line">  salary INT,</span><br><span class="line">  super_id INT,</span><br><span class="line">  branch_id INT</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE TABLE branch (</span><br><span class="line">  branch_id INT PRIMARY KEY,</span><br><span class="line">  branch_name VARCHAR(40),</span><br><span class="line">  mgr_id INT,</span><br><span class="line">  mgr_start_date DATE,</span><br><span class="line">  FOREIGN KEY(mgr_id) REFERENCES employee(emp_id) ON DELETE SET NULL</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">ALTER TABLE employee</span><br><span class="line">ADD FOREIGN KEY(branch_id)</span><br><span class="line">REFERENCES branch(branch_id)</span><br><span class="line">ON DELETE SET NULL;</span><br><span class="line"></span><br><span class="line">ALTER TABLE employee</span><br><span class="line">ADD FOREIGN KEY(super_id)</span><br><span class="line">REFERENCES employee(emp_id)</span><br><span class="line">ON DELETE SET NULL;</span><br><span class="line"></span><br><span class="line">CREATE TABLE client (</span><br><span class="line">  client_id INT PRIMARY KEY,</span><br><span class="line">  client_name VARCHAR(40),</span><br><span class="line">  branch_id INT,</span><br><span class="line">  FOREIGN KEY(branch_id) REFERENCES branch(branch_id) ON DELETE SET NULL</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE TABLE works_with (</span><br><span class="line">  emp_id INT,</span><br><span class="line">  client_id INT,</span><br><span class="line">  total_sales INT,</span><br><span class="line">  PRIMARY KEY(emp_id, client_id),</span><br><span class="line">  FOREIGN KEY(emp_id) REFERENCES employee(emp_id) ON DELETE CASCADE,</span><br><span class="line">  FOREIGN KEY(client_id) REFERENCES client(client_id) ON DELETE CASCADE</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE TABLE branch_supplier (</span><br><span class="line">  branch_id INT,</span><br><span class="line">  supplier_name VARCHAR(40),</span><br><span class="line">  supply_type VARCHAR(40),</span><br><span class="line">  PRIMARY KEY(branch_id, supplier_name),</span><br><span class="line">  FOREIGN KEY(branch_id) REFERENCES branch(branch_id) ON DELETE CASCADE</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- -----------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">-- Corporate</span><br><span class="line">INSERT INTO employee VALUES(100, &#39;David&#39;, &#39;Wallace&#39;, &#39;1967-11-17&#39;, &#39;M&#39;, 250000, NULL, NULL);</span><br><span class="line"></span><br><span class="line">INSERT INTO branch VALUES(1, &#39;Corporate&#39;, 100, &#39;2006-02-09&#39;);</span><br><span class="line"></span><br><span class="line">UPDATE employee</span><br><span class="line">SET branch_id &#x3D; 1</span><br><span class="line">WHERE emp_id &#x3D; 100;</span><br><span class="line"></span><br><span class="line">INSERT INTO employee VALUES(101, &#39;Jan&#39;, &#39;Levinson&#39;, &#39;1961-05-11&#39;, &#39;F&#39;, 110000, 100, 1);</span><br><span class="line"></span><br><span class="line">-- Scranton</span><br><span class="line">INSERT INTO employee VALUES(102, &#39;Michael&#39;, &#39;Scott&#39;, &#39;1964-03-15&#39;, &#39;M&#39;, 75000, 100, NULL);</span><br><span class="line"></span><br><span class="line">INSERT INTO branch VALUES(2, &#39;Scranton&#39;, 102, &#39;1992-04-06&#39;);</span><br><span class="line"></span><br><span class="line">UPDATE employee</span><br><span class="line">SET branch_id &#x3D; 2</span><br><span class="line">WHERE emp_id &#x3D; 102;</span><br><span class="line"></span><br><span class="line">INSERT INTO employee VALUES(103, &#39;Angela&#39;, &#39;Martin&#39;, &#39;1971-06-25&#39;, &#39;F&#39;, 63000, 102, 2);</span><br><span class="line">INSERT INTO employee VALUES(104, &#39;Kelly&#39;, &#39;Kapoor&#39;, &#39;1980-02-05&#39;, &#39;F&#39;, 55000, 102, 2);</span><br><span class="line">INSERT INTO employee VALUES(105, &#39;Stanley&#39;, &#39;Hudson&#39;, &#39;1958-02-19&#39;, &#39;M&#39;, 69000, 102, 2);</span><br><span class="line"></span><br><span class="line">-- Stamford</span><br><span class="line">INSERT INTO employee VALUES(106, &#39;Josh&#39;, &#39;Porter&#39;, &#39;1969-09-05&#39;, &#39;M&#39;, 78000, 100, NULL);</span><br><span class="line"></span><br><span class="line">INSERT INTO branch VALUES(3, &#39;Stamford&#39;, 106, &#39;1998-02-13&#39;);</span><br><span class="line"></span><br><span class="line">UPDATE employee</span><br><span class="line">SET branch_id &#x3D; 3</span><br><span class="line">WHERE emp_id &#x3D; 106;</span><br><span class="line"></span><br><span class="line">INSERT INTO employee VALUES(107, &#39;Andy&#39;, &#39;Bernard&#39;, &#39;1973-07-22&#39;, &#39;M&#39;, 65000, 106, 3);</span><br><span class="line">INSERT INTO employee VALUES(108, &#39;Jim&#39;, &#39;Halpert&#39;, &#39;1978-10-01&#39;, &#39;M&#39;, 71000, 106, 3);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- BRANCH SUPPLIER</span><br><span class="line">INSERT INTO branch_supplier VALUES(2, &#39;Hammer Mill&#39;, &#39;Paper&#39;);</span><br><span class="line">INSERT INTO branch_supplier VALUES(2, &#39;Uni-ball&#39;, &#39;Writing Utensils&#39;);</span><br><span class="line">INSERT INTO branch_supplier VALUES(3, &#39;Patriot Paper&#39;, &#39;Paper&#39;);</span><br><span class="line">INSERT INTO branch_supplier VALUES(2, &#39;J.T. Forms &amp; Labels&#39;, &#39;Custom Forms&#39;);</span><br><span class="line">INSERT INTO branch_supplier VALUES(3, &#39;Uni-ball&#39;, &#39;Writing Utensils&#39;);</span><br><span class="line">INSERT INTO branch_supplier VALUES(3, &#39;Hammer Mill&#39;, &#39;Paper&#39;);</span><br><span class="line">INSERT INTO branch_supplier VALUES(3, &#39;Stamford Lables&#39;, &#39;Custom Forms&#39;);</span><br><span class="line"></span><br><span class="line">-- CLIENT</span><br><span class="line">INSERT INTO client VALUES(400, &#39;Dunmore Highschool&#39;, 2);</span><br><span class="line">INSERT INTO client VALUES(401, &#39;Lackawana Country&#39;, 2);</span><br><span class="line">INSERT INTO client VALUES(402, &#39;FedEx&#39;, 3);</span><br><span class="line">INSERT INTO client VALUES(403, &#39;John Daly Law, LLC&#39;, 3);</span><br><span class="line">INSERT INTO client VALUES(404, &#39;Scranton Whitepages&#39;, 2);</span><br><span class="line">INSERT INTO client VALUES(405, &#39;Times Newspaper&#39;, 3);</span><br><span class="line">INSERT INTO client VALUES(406, &#39;FedEx&#39;, 2);</span><br><span class="line"></span><br><span class="line">-- WORKS_WITH</span><br><span class="line">INSERT INTO works_with VALUES(105, 400, 55000);</span><br><span class="line">INSERT INTO works_with VALUES(102, 401, 267000);</span><br><span class="line">INSERT INTO works_with VALUES(108, 402, 22500);</span><br><span class="line">INSERT INTO works_with VALUES(107, 403, 5000);</span><br><span class="line">INSERT INTO works_with VALUES(108, 403, 12000);</span><br><span class="line">INSERT INTO works_with VALUES(105, 404, 33000);</span><br><span class="line">INSERT INTO works_with VALUES(107, 405, 26000);</span><br><span class="line">INSERT INTO works_with VALUES(102, 406, 15000);</span><br><span class="line">INSERT INTO works_with VALUES(105, 406, 130000);</span><br></pre></td></tr></table></figure>
+<h2 id="Queries"><a href="#Queries" class="headerlink" title="Queries"></a>Queries</h2><h4 id="Select-all-employees"><a href="#Select-all-employees" class="headerlink" title="Select all employees"></a>Select all employees</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM employee;</span><br></pre></td></tr></table></figure>
+<h4 id="Select-all-exployees-ordered-by-salary"><a href="#Select-all-exployees-ordered-by-salary" class="headerlink" title="Select all exployees ordered by salary"></a>Select all exployees ordered by salary</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM employee</span><br><span class="line">ORDER BY salary;</span><br></pre></td></tr></table></figure>
+<h4 id="Select-all-exployees-ordered-by-sex-then-name"><a href="#Select-all-exployees-ordered-by-sex-then-name" class="headerlink" title="Select all exployees ordered by sex then name"></a>Select all exployees ordered by sex then name</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM employee</span><br><span class="line">ORDER BY sex, first_name, last_name;</span><br></pre></td></tr></table></figure>
+<h4 id="Select-first-5-exployees"><a href="#Select-first-5-exployees" class="headerlink" title="Select first 5 exployees"></a>Select first 5 exployees</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM employee</span><br><span class="line">LIMIT 5;</span><br></pre></td></tr></table></figure>
+<h4 id="Select-first-and-last-name-of-all-exployees"><a href="#Select-first-and-last-name-of-all-exployees" class="headerlink" title="Select first and last name of all exployees"></a>Select first and last name of all exployees</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT first_name, last_name</span><br><span class="line">FROM employee;</span><br></pre></td></tr></table></figure>
+<h3 id="AS-keyword"><a href="#AS-keyword" class="headerlink" title="AS keyword"></a>AS keyword</h3><p>Name a column differently</p>
+<h4 id="Select-the-forename-and-surnames-names-of-all-employees"><a href="#Select-the-forename-and-surnames-names-of-all-employees" class="headerlink" title="Select the forename and surnames names of all employees"></a>Select the forename and surnames names of all employees</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT first_name AS forename, last_name AS surname</span><br><span class="line">FROM employee;</span><br></pre></td></tr></table></figure>
+<h3 id="DISTINCT-keyword"><a href="#DISTINCT-keyword" class="headerlink" title="DISTINCT keyword"></a>DISTINCT keyword</h3><h4 id="Select-all-the-different-genders"><a href="#Select-all-the-different-genders" class="headerlink" title="Select all the different genders"></a>Select all the different genders</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT sex</span><br><span class="line">FROM employee;</span><br></pre></td></tr></table></figure>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><h3 id="COUNT-function"><a href="#COUNT-function" class="headerlink" title="COUNT function"></a>COUNT function</h3><h4 id="Find-the-number-of-employees"><a href="#Find-the-number-of-employees" class="headerlink" title="Find the number of employees"></a>Find the number of employees</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(emp_id)</span><br><span class="line">FROM employee;</span><br></pre></td></tr></table></figure>
+<h4 id="Find-the-number-of-female-employees-born-after-1970"><a href="#Find-the-number-of-female-employees-born-after-1970" class="headerlink" title="Find the number of female employees born after 1970"></a>Find the number of female employees born after 1970</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(emp_id)</span><br><span class="line">FROM employee;</span><br><span class="line">WHERE sex &#x3D; &#39;F&#39; AND birth_date &gt; &#39;1971-01-01&#39;;</span><br></pre></td></tr></table></figure>
+<h3 id="AVG-function"><a href="#AVG-function" class="headerlink" title="AVG function"></a>AVG function</h3><p>Average of a column</p>
+<h4 id="Find-the-averge-of-all-employee’s-salaries"><a href="#Find-the-averge-of-all-employee’s-salaries" class="headerlink" title="Find the averge of all employee’s salaries"></a>Find the averge of all employee’s salaries</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT AVG(salary)</span><br><span class="line">FROM employee;</span><br></pre></td></tr></table></figure>
+<h3 id="SUM-function"><a href="#SUM-function" class="headerlink" title="SUM function"></a>SUM function</h3><h4 id="Find-the-sum-of-all-employee’s-salaries"><a href="#Find-the-sum-of-all-employee’s-salaries" class="headerlink" title="Find the sum of all employee’s salaries"></a>Find the sum of all employee’s salaries</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT SUM(salary)</span><br><span class="line">FROM employee;</span><br></pre></td></tr></table></figure>
+<h3 id="GROUP-BY-keyword"><a href="#GROUP-BY-keyword" class="headerlink" title="GROUP BY keyword"></a>GROUP BY keyword</h3><h4 id="Find-out-how-many-males-and-females-there-are"><a href="#Find-out-how-many-males-and-females-there-are" class="headerlink" title="Find out how many males and females there are"></a>Find out how many males and females there are</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(sex), sex</span><br><span class="line">FROM exmployee</span><br><span class="line">GROUP BY sex;</span><br></pre></td></tr></table></figure>
+<h4 id="Find-the-total-sales-of-each-salesman"><a href="#Find-the-total-sales-of-each-salesman" class="headerlink" title="Find the total sales of each salesman"></a>Find the total sales of each salesman</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT SUM(total_sales), emp_id</span><br><span class="line">FROM works_with</span><br><span class="line">GROUP BY emp_id;</span><br></pre></td></tr></table></figure>
+<h2 id="Wildcards"><a href="#Wildcards" class="headerlink" title="Wildcards"></a>Wildcards</h2><p>% is any number characters</p>
+<p>_ is one character</p>
+<h3 id="LIKE-keyword"><a href="#LIKE-keyword" class="headerlink" title="LIKE keyword"></a>LIKE keyword</h3><h4 id="Find-any-client’s-who-are-an-LLC"><a href="#Find-any-client’s-who-are-an-LLC" class="headerlink" title="Find any client’s who are an LLC"></a>Find any client’s who are an LLC</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT * </span><br><span class="line">FROM client</span><br><span class="line">WHERE client_name LIKE &#39;%LLC&#39;;</span><br></pre></td></tr></table></figure>
+<h4 id="Find-any-branch-suppliers-who-are-in-the-label-business"><a href="#Find-any-branch-suppliers-who-are-in-the-label-business" class="headerlink" title="Find any branch suppliers who are in the label business"></a>Find any branch suppliers who are in the label business</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM branch_supplier</span><br><span class="line">WHERE supplier_name LIKE &#39;% Label%&#39;;</span><br></pre></td></tr></table></figure>
+<h4 id="Find-any-employee-born-in-October"><a href="#Find-any-employee-born-in-October" class="headerlink" title="Find any employee born in October"></a>Find any employee born in October</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM employee</span><br><span class="line">WHERE birth_date LIKE &#39;____-10%&#39;;</span><br></pre></td></tr></table></figure>
+<h4 id="Find-any-clients-who-are-schools"><a href="#Find-any-clients-who-are-schools" class="headerlink" title="Find any clients who are schools"></a>Find any clients who are schools</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM client </span><br><span class="line">WHERE client_name LIKE &#39;%school%&#39;;</span><br></pre></td></tr></table></figure>
+<h2 id="UNION"><a href="#UNION" class="headerlink" title="UNION"></a>UNION</h2><h4 id="Find-a-list-of-employee-and-branch-names"><a href="#Find-a-list-of-employee-and-branch-names" class="headerlink" title="Find a list of employee and branch names"></a>Find a list of employee and branch names</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT first_name</span><br><span class="line">FROM employee</span><br><span class="line">UNION</span><br><span class="line">SELECT branch_name</span><br><span class="line">FROM branch</span><br><span class="line">UNION</span><br><span class="line">SELECT client_name</span><br><span class="line">FROM client;</span><br></pre></td></tr></table></figure>
+<p>Other uses:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT first_name AS Compaany_Names</span><br><span class="line">FROM employee</span><br><span class="line">UNION</span><br><span class="line">SELECT branch_name</span><br><span class="line">FROM branch;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT client_name, branch_id</span><br><span class="line">FROM client</span><br><span class="line">UNION</span><br><span class="line">SELECT supplier_name, branch_id</span><br><span class="line">FROM branch_supplier;</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT client_name, client.branch_id</span><br><span class="line">FROM client</span><br><span class="line">UNION</span><br><span class="line">SELECT supplier_name, branch_supplier.branch_id</span><br><span class="line">FROM branch_supplier;</span><br></pre></td></tr></table></figure>
+<h4 id="Find-a-list-of-all-money-spent-or-earned-by-the-company"><a href="#Find-a-list-of-all-money-spent-or-earned-by-the-company" class="headerlink" title="Find a list of all money spent or earned by the company"></a>Find a list of all money spent or earned by the company</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT salary</span><br><span class="line">FROM employee</span><br><span class="line">UNION</span><br><span class="line">SELECT total_sales</span><br><span class="line">FROM works_with;</span><br></pre></td></tr></table></figure>
+<h2 id="JOIN"><a href="#JOIN" class="headerlink" title="JOIN"></a>JOIN</h2><p>Combine rows from two or more tables based on related column</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT employee.emp_id, employee.first_name, branch.branch_name</span><br><span class="line">FROM employee</span><br><span class="line">JOIN branch</span><br><span class="line">ON employee.emp_id &#x3D; branch.mgr_id;</span><br></pre></td></tr></table></figure>
+<p>LEFT JOIN:</p>
+<p>Includes all the rows in employee table (result Null for not match)</p>
+<p>RIGHT JOIN:</p>
+<p>includes all the rows in branch table (result Null for not match)</p>
+<p>FULL JOIN:</p>
+<p>LEFT JOIN + RIGHT JOIN</p>
+<p>Not in MySQL</p>
+<h2 id="Nested-Queries"><a href="#Nested-Queries" class="headerlink" title="Nested Queries"></a>Nested Queries</h2><p>Use more SELECT</p>
+<h4 id="Find-the-names-of-all-employees-who-have-sold-over-30-000-to-a-single-client"><a href="#Find-the-names-of-all-employees-who-have-sold-over-30-000-to-a-single-client" class="headerlink" title="Find the names of all employees who have sold over 30,000 to a single client"></a>Find the names of all employees who have sold over 30,000 to a single client</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT employee.first_name, employee.last_name</span><br><span class="line">FROM employee</span><br><span class="line">WHERE employee.emp_id IN (</span><br><span class="line">	SELECT work_with.emp_id</span><br><span class="line">  FROM works_with</span><br><span class="line">  WHERE works_with.total_sales &gt; 30000</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="Find-all-clients-who-are-handled-by-the-branch-that-Michael-Scott-manages-Assume-given-Michael’s-ID"><a href="#Find-all-clients-who-are-handled-by-the-branch-that-Michael-Scott-manages-Assume-given-Michael’s-ID" class="headerlink" title="Find all clients who are handled by the branch that Michael Scott manages. Assume given Michael’s ID"></a>Find all clients who are handled by the branch that Michael Scott manages. Assume given Michael’s ID</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT client.client_name</span><br><span class="line">FROM client</span><br><span class="line">WHERE client.branch_id &#x3D; (</span><br><span class="line">	SELECT branch.branch_id</span><br><span class="line">  FROM branch</span><br><span class="line">  WHERE branch.mgr_id &#x3D; 102</span><br><span class="line">  LIMIT 1</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>If use =, better limit the result to 1.</p>
+<h2 id="Delete-entries-when-they-have-foreign-key"><a href="#Delete-entries-when-they-have-foreign-key" class="headerlink" title="Delete entries when they have foreign key"></a>Delete entries when they have foreign key</h2><h4 id="ON-DELETE"><a href="#ON-DELETE" class="headerlink" title="ON DELETE"></a>ON DELETE</h4><p>Foreign keys set to null</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE branch (</span><br><span class="line">	branch_id INT PRIMARY KEY,</span><br><span class="line">	branch_name VARCHAR(40),</span><br><span class="line">  mgr_id INT,</span><br><span class="line">  mgr_start_date DATE,</span><br><span class="line">  FOREIGN KEY(mgr_id) REFERENCES employee(emp_id) ON DELETE SET NULL</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">DELETE FROM emplyee</span><br><span class="line">WHERE emp_id &#x3D; 102;</span><br><span class="line"></span><br><span class="line">SELECT * FROM branch;</span><br></pre></td></tr></table></figure>
+<h4 id="ON-DELETE-CASCADE"><a href="#ON-DELETE-CASCADE" class="headerlink" title="ON DELETE CASCADE"></a>ON DELETE CASCADE</h4><p>Delete the entire row</p>
+<p>Can be used when the deleting key is primary key since primary key cannot be null</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE branch (</span><br><span class="line">	branch_id INT,</span><br><span class="line">	supplier_name VARCHAR(40),</span><br><span class="line">  supply_type VARCHAR(40,</span><br><span class="line">  PRIMARY KEY(branch_id, supplier_name),</span><br><span class="line">  FOREIGN KEY(branch_id) REFERENCES branch(branch_id) ON DELETE CASCADE</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">DELETE FROM branch</span><br><span class="line">WHERE branch_id &#x3D; 2;</span><br><span class="line"></span><br><span class="line">SELECT * FROM branch_supplier;</span><br></pre></td></tr></table></figure>
+<h2 id="Trigger"><a href="#Trigger" class="headerlink" title="Trigger"></a>Trigger</h2><p>In command prompt, type</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">use student;</span><br><span class="line"></span><br><span class="line">DELIMITER $$</span><br><span class="line"></span><br><span class="line">CREATE</span><br><span class="line">	TRIGGER my_trigger BEFORE INSERT </span><br><span class="line">	ON employee</span><br><span class="line">	FOR EACH ROW BEGIN </span><br><span class="line">		INSERT INTO trigger_test VALUES(&#39;added new employee&#39;);</span><br><span class="line">	END$$</span><br><span class="line">	</span><br><span class="line">DELIMITER ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO employee</span><br><span class="line">VALUES(109, &#39;Oscar&#39;, &#39;Martinez&#39;, &#39;1968-02-19&#39;, &#39;M&#39;, 69000, 106, 3);</span><br><span class="line"></span><br><span class="line">SELECT * FROM triiger_test;</span><br></pre></td></tr></table></figure>
+<h4 id="NEW"><a href="#NEW" class="headerlink" title="NEW"></a>NEW</h4><p>Refer to the new row inserting</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER $$</span><br><span class="line"></span><br><span class="line">CREATE</span><br><span class="line">	TRIGGER my_trigger BEFORE INSERT </span><br><span class="line">	ON employee</span><br><span class="line">	FOR EACH ROW BEGIN </span><br><span class="line">		INSERT INTO trigger_test VALUES(NEW.first_name);</span><br><span class="line">	END$$</span><br><span class="line">	</span><br><span class="line">DELIMITER ;</span><br></pre></td></tr></table></figure>
+<h4 id="IF-statement"><a href="#IF-statement" class="headerlink" title="IF statement"></a>IF statement</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER $$</span><br><span class="line"></span><br><span class="line">CREATE</span><br><span class="line">	TRIGGER my_trigger BEFORE INSERT </span><br><span class="line">	ON employee</span><br><span class="line">	FOR EACH ROW BEGIN </span><br><span class="line">		IF NEW.sex &#x3D; &#39;M&#39; THEN</span><br><span class="line">			INSERT INTO trigger_test VALUES(&#39;added male employee&#39;);</span><br><span class="line">		ELSEIF NEW.set &#x3D; &#39;F&#39; THEN</span><br><span class="line">			INSERT INTO trigger_test VALUES(&#39;added female employee&#39;);</span><br><span class="line">		ELSE</span><br><span class="line">			INSERT INTO trigger_test VALUES(&#39;added other employee&#39;);</span><br><span class="line">		END IF;</span><br><span class="line">	END$$</span><br><span class="line">	</span><br><span class="line">DELIMITER ;</span><br></pre></td></tr></table></figure>
+<h3 id="Trigger-for-update-delete…"><a href="#Trigger-for-update-delete…" class="headerlink" title="Trigger for update, delete…"></a>Trigger for update, delete…</h3><p><code>TRIGGER my_trigger BEFORE UPDATE</code> …</p>
+<p><code>TRIGGER my_trigger BEFORE DELETE</code> …</p>
+<h3 id="AFTER"><a href="#AFTER" class="headerlink" title="AFTER"></a>AFTER</h3><p><code>TRIGGER my_trigger AFTER UPDATE</code> …</p>
+<h3 id="DROP-TRIGGER"><a href="#DROP-TRIGGER" class="headerlink" title="DROP TRIGGER"></a>DROP TRIGGER</h3><p><code>DROP TIGGER my_trigger;</code></p>
+<h2 id="ER-Diagram"><a href="#ER-Diagram" class="headerlink" title="ER Diagram"></a>ER Diagram</h2><p><img src="./2021-03025-MySQL-Basic/Snipaste_2021-03-24_11-18-34.png" alt="ER Diagram"></p>
+<p>by Mike Dane from <a class="link"   target="_blank" rel="noopener" href="https://www.mikedane.com/databases/sql/creating-company-database/" >mikedane.com<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h2><p><img src="./2021-03025-MySQL-Basic/Snipaste_2021-03-24_11-18-50.png" alt="Schema"></p>
+<p>by Mike Dane from <a class="link"   target="_blank" rel="noopener" href="https://www.mikedane.com/databases/sql/creating-company-database/" >mikedane.com<i class="fas fa-external-link-alt"></i></a></p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/03/14/Matlab-Basic/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Matlab Basic</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span> -
+            
+            2021 <i class="fas fa-heart icon-animate"></i> <a href="/">Sungwa Yu</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a> | Theme <a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.3.0</a>
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic"><span class="nav-number">1.</span> <span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Type"><span class="nav-number">1.1.</span> <span class="nav-text">Data Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-Up-Table"><span class="nav-number">1.2.</span> <span class="nav-text">Set Up Table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-Table"><span class="nav-number">1.2.1.</span> <span class="nav-text">Create Table</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Print-Table-Data"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Print Table Data</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraints"><span class="nav-number">1.2.2.</span> <span class="nav-text">Constraints</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AUTO-INCREMENT"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">AUTO_INCREMENT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NOT-NULL"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">NOT NULL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UNIQUE"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">UNIQUE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DEFAULT"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">DEFAULT</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Describe-Table"><span class="nav-number">1.2.3.</span> <span class="nav-text">Describe Table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-Table"><span class="nav-number">1.2.4.</span> <span class="nav-text">Delete Table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modify-Table"><span class="nav-number">1.2.5.</span> <span class="nav-text">Modify Table</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Insert"><span class="nav-number">1.3.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Update"><span class="nav-number">1.4.</span> <span class="nav-text">Update</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OR-AND-keyword-Set-multiple"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">OR&#x2F;AND keyword, Set multiple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Update-all-row"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">Update all row</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete"><span class="nav-number">1.5.</span> <span class="nav-text">Delete</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Delete-all-rows"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">Delete all rows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Delete-specified-rows"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">Delete specified rows</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Queries"><span class="nav-number">1.6.</span> <span class="nav-text">Basic Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-all"><span class="nav-number">1.6.0.1.</span> <span class="nav-text">Select all</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-specified-columns"><span class="nav-number">1.6.0.2.</span> <span class="nav-text">Select specified columns</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-by-order-column"><span class="nav-number">1.6.0.3.</span> <span class="nav-text">Select by order (column)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LIMIT"><span class="nav-number">1.6.0.4.</span> <span class="nav-text">LIMIT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IN"><span class="nav-number">1.6.0.5.</span> <span class="nav-text">IN</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Advance"><span class="nav-number">2.</span> <span class="nav-text">Advance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">2.1.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Queries"><span class="nav-number">2.2.</span> <span class="nav-text">Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-all-employees"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">Select all employees</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-all-exployees-ordered-by-salary"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">Select all exployees ordered by salary</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-all-exployees-ordered-by-sex-then-name"><span class="nav-number">2.2.0.3.</span> <span class="nav-text">Select all exployees ordered by sex then name</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-first-5-exployees"><span class="nav-number">2.2.0.4.</span> <span class="nav-text">Select first 5 exployees</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-first-and-last-name-of-all-exployees"><span class="nav-number">2.2.0.5.</span> <span class="nav-text">Select first and last name of all exployees</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AS-keyword"><span class="nav-number">2.2.1.</span> <span class="nav-text">AS keyword</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-the-forename-and-surnames-names-of-all-employees"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">Select the forename and surnames names of all employees</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DISTINCT-keyword"><span class="nav-number">2.2.2.</span> <span class="nav-text">DISTINCT keyword</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-all-the-different-genders"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Select all the different genders</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">2.3.</span> <span class="nav-text">Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COUNT-function"><span class="nav-number">2.3.1.</span> <span class="nav-text">COUNT function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-the-number-of-employees"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">Find the number of employees</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-the-number-of-female-employees-born-after-1970"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">Find the number of female employees born after 1970</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVG-function"><span class="nav-number">2.3.2.</span> <span class="nav-text">AVG function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-the-averge-of-all-employee%E2%80%99s-salaries"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">Find the averge of all employee’s salaries</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SUM-function"><span class="nav-number">2.3.3.</span> <span class="nav-text">SUM function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-the-sum-of-all-employee%E2%80%99s-salaries"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">Find the sum of all employee’s salaries</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GROUP-BY-keyword"><span class="nav-number">2.3.4.</span> <span class="nav-text">GROUP BY keyword</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-out-how-many-males-and-females-there-are"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">Find out how many males and females there are</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-the-total-sales-of-each-salesman"><span class="nav-number">2.3.4.2.</span> <span class="nav-text">Find the total sales of each salesman</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wildcards"><span class="nav-number">2.4.</span> <span class="nav-text">Wildcards</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LIKE-keyword"><span class="nav-number">2.4.1.</span> <span class="nav-text">LIKE keyword</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-any-client%E2%80%99s-who-are-an-LLC"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">Find any client’s who are an LLC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-any-branch-suppliers-who-are-in-the-label-business"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">Find any branch suppliers who are in the label business</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-any-employee-born-in-October"><span class="nav-number">2.4.1.3.</span> <span class="nav-text">Find any employee born in October</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-any-clients-who-are-schools"><span class="nav-number">2.4.1.4.</span> <span class="nav-text">Find any clients who are schools</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UNION"><span class="nav-number">2.5.</span> <span class="nav-text">UNION</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-a-list-of-employee-and-branch-names"><span class="nav-number">2.5.0.1.</span> <span class="nav-text">Find a list of employee and branch names</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-a-list-of-all-money-spent-or-earned-by-the-company"><span class="nav-number">2.5.0.2.</span> <span class="nav-text">Find a list of all money spent or earned by the company</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JOIN"><span class="nav-number">2.6.</span> <span class="nav-text">JOIN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nested-Queries"><span class="nav-number">2.7.</span> <span class="nav-text">Nested Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-the-names-of-all-employees-who-have-sold-over-30-000-to-a-single-client"><span class="nav-number">2.7.0.1.</span> <span class="nav-text">Find the names of all employees who have sold over 30,000 to a single client</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-all-clients-who-are-handled-by-the-branch-that-Michael-Scott-manages-Assume-given-Michael%E2%80%99s-ID"><span class="nav-number">2.7.0.2.</span> <span class="nav-text">Find all clients who are handled by the branch that Michael Scott manages. Assume given Michael’s ID</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete-entries-when-they-have-foreign-key"><span class="nav-number">2.8.</span> <span class="nav-text">Delete entries when they have foreign key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ON-DELETE"><span class="nav-number">2.8.0.1.</span> <span class="nav-text">ON DELETE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ON-DELETE-CASCADE"><span class="nav-number">2.8.0.2.</span> <span class="nav-text">ON DELETE CASCADE</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trigger"><span class="nav-number">2.9.</span> <span class="nav-text">Trigger</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NEW"><span class="nav-number">2.9.0.1.</span> <span class="nav-text">NEW</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IF-statement"><span class="nav-number">2.9.0.2.</span> <span class="nav-text">IF statement</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trigger-for-update-delete%E2%80%A6"><span class="nav-number">2.9.1.</span> <span class="nav-text">Trigger for update, delete…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AFTER"><span class="nav-number">2.9.2.</span> <span class="nav-text">AFTER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DROP-TRIGGER"><span class="nav-number">2.9.3.</span> <span class="nav-text">DROP TRIGGER</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER-Diagram"><span class="nav-number">2.10.</span> <span class="nav-text">ER Diagram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Schema"><span class="nav-number">2.11.</span> <span class="nav-text">Schema</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

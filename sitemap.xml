@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yusungwa.com/2021/03/25/MySQL-Basic/</loc>
+    
+    <lastmod>2021-03-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yusungwa.com/2021/03/14/Matlab-Basic/</loc>
     
     <lastmod>2021-03-14</lastmod>
@@ -88,7 +95,7 @@
 
   <url>
     <loc>https://yusungwa.com/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -96,49 +103,63 @@
   
   <url>
     <loc>https://yusungwa.com/tags/Hexo/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yusungwa.com/tags/VM/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yusungwa.com/tags/SSH/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yusungwa.com/tags/Git/</loc>
-    <lastmod>2021-03-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yusungwa.com/tags/Vim/</loc>
-    <lastmod>2021-03-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yusungwa.com/tags/iTerm2/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yusungwa.com/tags/Matlab/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/tags/Vim/</loc>
+    <lastmod>2021-03-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/tags/iTerm2/</loc>
+    <lastmod>2021-03-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/tags/MySQL/</loc>
+    <lastmod>2021-03-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/tags/Database/</loc>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -147,42 +168,56 @@
   
   <url>
     <loc>https://yusungwa.com/categories/Note/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yusungwa.com/categories/Note/Hexo/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yusungwa.com/categories/Note/Tools/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yusungwa.com/categories/Note/Git/</loc>
-    <lastmod>2021-03-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yusungwa.com/categories/Note/Shortcut/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yusungwa.com/categories/Note/Matlab/</loc>
-    <lastmod>2021-03-14</lastmod>
+    <lastmod>2021-03-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/categories/Note/Shortcut/</loc>
+    <lastmod>2021-03-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/categories/Note/Database/</loc>
+    <lastmod>2021-03-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yusungwa.com/categories/Note/Database/MySQL/</loc>
+    <lastmod>2021-03-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
