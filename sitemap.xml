@@ -144,6 +144,13 @@
   </url>
   
   <url>
+    <loc>https://yusungwa.com/tags/Matlab/</loc>
+    <lastmod>2021-09-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yusungwa.com/tags/Vim/</loc>
     <lastmod>2021-09-19</lastmod>
     <changefreq>daily</changefreq>
@@ -166,13 +173,6 @@
   
   <url>
     <loc>https://yusungwa.com/tags/Database/</loc>
-    <lastmod>2021-09-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yusungwa.com/tags/Matlab/</loc>
     <lastmod>2021-09-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -209,6 +209,13 @@
   </url>
   
   <url>
+    <loc>https://yusungwa.com/categories/Note/Matlab/</loc>
+    <lastmod>2021-09-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yusungwa.com/categories/Note/Shortcut/</loc>
     <lastmod>2021-09-19</lastmod>
     <changefreq>daily</changefreq>
@@ -217,13 +224,6 @@
   
   <url>
     <loc>https://yusungwa.com/categories/Note/Database/</loc>
-    <lastmod>2021-09-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yusungwa.com/categories/Note/Matlab/</loc>
     <lastmod>2021-09-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
