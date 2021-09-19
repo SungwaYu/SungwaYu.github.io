@@ -220,12 +220,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>113 Words</span>
+            <i class="fas fa-file-word"></i> <span>332 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i> <span>1 Mins</span>
+            <i class="fas fa-clock"></i> <span>2 Mins</span>
         </span>
     
     
@@ -265,6 +265,21 @@
 <p>Force push</p>
 </blockquote>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> -f <span class="built_in">origin</span> master</span><br></pre></td></tr></table></figure>
+<h2 id="Stash"><a href="#Stash" class="headerlink" title="Stash"></a>Stash</h2><p>Used when you want to go back to the starting point of the commit.</p>
+<p><strong><em>git stash</em></strong></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> stash</span><br><span class="line">git stash -u   <span class="comment"># untracked files</span></span><br><span class="line">git stash save <span class="string">&quot;message&quot;</span>   <span class="comment"># add message record, will be shown in git stash list</span></span><br></pre></td></tr></table></figure>
+<p>Save the current change (either before or after <code>git add</code>, after <code>git stash pop</code>, files will be in the stage before <code>git add</code>). Go back to the starting point of the commit, to do something else (branch out). <strong><em>DO NOT</em></strong> edit the fresh commit (after <code>git stash</code>) directly, otherwise may cause conflict. In this case, use <code>git stash show</code> to find the difference and edit them in the “fresh commit”. Then use <code>git stash clear</code> to drop <strong><em>all</em></strong> stashes, or use <code>git stash drop &lt;STASHNAME&gt;</code>. Then use <code>git add</code> and <code>git commit</code> (not <code>git commit -a</code>).</p>
+<p><strong><em>git stash list</em></strong></p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git stash list</span></span><br></pre></td></tr></table></figure>
+<p>List stash entries and its name.</p>
+<p><strong><em>Get back to work</em></strong></p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git stash apply <span class="variable">&lt;STASHNAME&gt;</span></span><br><span class="line">git stash pop   <span class="comment"># will drop the first stash (0)</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h1 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h1><ol>
+<li>Working at branch ‘a’, has not commited (could have done <code>git add .</code>). When create a new branch ‘b’ now, every changes in branch ‘a’ will carry over to the new branch, and after doing a commit in the new branch ‘b’, branch ‘a’ will look like anything unchanged (no <code>git add .</code> too).</li>
+</ol>
+
         </div>
 
         
@@ -409,7 +424,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Setting"><span class="nav-number">1.</span> <span class="nav-text">Setting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tag"><span class="nav-number">2.</span> <span class="nav-text">Tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Force-Push"><span class="nav-number">3.</span> <span class="nav-text">Force Push</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Setting"><span class="nav-number">1.</span> <span class="nav-text">Setting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tag"><span class="nav-number">2.</span> <span class="nav-text">Tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Force-Push"><span class="nav-number">3.</span> <span class="nav-text">Force Push</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stash"><span class="nav-number">4.</span> <span class="nav-text">Stash</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Questions"><span class="nav-number"></span> <span class="nav-text">Questions</span></a>
     </div>
 </div>
         </aside>

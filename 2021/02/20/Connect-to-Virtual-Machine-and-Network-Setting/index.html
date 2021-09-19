@@ -220,7 +220,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>258 Words</span>
+            <i class="fas fa-file-word"></i> <span>311 Words</span>
         </span>
     
     
@@ -274,8 +274,16 @@
 <p><strong><em>Now, <code>ping www.google.com</code> and <code>ping 10.0.0.3</code> should work.</em></strong></p>
 <ol start="6">
 <li>In host’s terminal, <code>ping 10.0.0.195</code> should work as well.</li>
+<li>May need to restart the VM to update the ip address shown in the VMWare.</li>
 </ol>
 <h2 id="SSH-to-VM-on-Mac"><a href="#SSH-to-VM-on-Mac" class="headerlink" title="SSH to VM on Mac"></a>SSH to VM on Mac</h2><p>In host terminal, enter <code>ssh user@ip-addr</code> (usually “user” is “root”). For me, it is <code>ssh root@10.0.0.195</code>. Next, it will ask you to enter the root password. Then enter “yes” if it is the first time. </p>
+<h2 id="Enable-Root-Login"><a href="#Enable-Root-Login" class="headerlink" title="Enable Root Login"></a>Enable Root Login</h2><ol>
+<li><code>sudo vim /etc/ssh/sshd_config</code></li>
+<li>Uncomment <code>#PermitRootLogin no</code> and change it to <code>PermitRootLogin yes</code></li>
+<li><code>sudo systemctl restart sshd.service</code></li>
+<li>If doesn’t work, change root password using <code>sudo passwd root</code></li>
+</ol>
+<h2 id="File-Transfer"><a href="#File-Transfer" class="headerlink" title="File Transfer"></a>File Transfer</h2><p>Use <code>SFTP</code> connection type.</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/WeZLtfrMdnISpX3v5WpJfA" >https://mp.weixin.qq.com/s/WeZLtfrMdnISpX3v5WpJfA<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
@@ -422,7 +430,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lookup-Host-IP-Address"><span class="nav-number">1.</span> <span class="nav-text">Lookup Host IP Address</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problems"><span class="nav-number">2.</span> <span class="nav-text">Problems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Procedure"><span class="nav-number">3.</span> <span class="nav-text">Procedure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-to-VM-on-Mac"><span class="nav-number">4.</span> <span class="nav-text">SSH to VM on Mac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lookup-Host-IP-Address"><span class="nav-number">1.</span> <span class="nav-text">Lookup Host IP Address</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problems"><span class="nav-number">2.</span> <span class="nav-text">Problems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Procedure"><span class="nav-number">3.</span> <span class="nav-text">Procedure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-to-VM-on-Mac"><span class="nav-number">4.</span> <span class="nav-text">SSH to VM on Mac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enable-Root-Login"><span class="nav-number">5.</span> <span class="nav-text">Enable Root Login</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File-Transfer"><span class="nav-number">6.</span> <span class="nav-text">File Transfer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li></ol>
     </div>
 </div>
         </aside>
