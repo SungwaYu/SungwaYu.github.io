@@ -182,7 +182,7 @@
         <i class="fas fa-edit"></i> Published 03-14-2021
     </span>
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i> Modified 03-14-2021
+        <i class="fas fa-edit"></i> Modified 09-26-2021
     </span>
     
         <span class="article-categories article-meta-item">
@@ -195,6 +195,14 @@
                 
                     <li>
                         &gt; <a href="/categories/Note/Shortcut/">Shortcut</a>
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Tips/">Tips</a>
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Productivity/">Productivity</a>
                     </li>
                 
             </ul>
@@ -213,6 +221,30 @@
                         | <a href="/tags/iTerm2/">iTerm2</a>
                     </li>
                 
+                    <li>
+                        | <a href="/tags/Capslox/">Capslox</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Tool/">Tool</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Tips/">Tips</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Workflow/">Workflow</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Productivity/">Productivity</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Setup/">Setup</a>
+                    </li>
+                
             </ul>
         </span>
     
@@ -220,12 +252,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>50 Words</span>
+            <i class="fas fa-file-word"></i> <span>1.1k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i> <span>1 Mins</span>
+            <i class="fas fa-clock"></i> <span>7 Mins</span>
         </span>
     
     
@@ -241,20 +273,193 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h2><p>Move viewport up half screen: <code>Ctrl+u</code></p>
-<p>Move viewport down half screen: <code>Ctrl+d</code></p>
-<p>Move viewport up (<strong>E</strong>xtra lines): <code>Ctrl+e</code></p>
-<h2 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h2><p>split horizontally</p>
-<p><code>cmd+shift+D</code></p>
-<p>split vertically</p>
-<p><code>cmd+D</code></p>
-<p>select pane</p>
-<p><code>cmd+opt+arrow</code></p>
-<p>type command to multiple terminals at the same time</p>
-<p><code>cmd+shift+i</code></p>
+            <blockquote>
+<p>Note: ‘*‘ means the setup is conflict with another key</p>
+</blockquote>
+<h1 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h1><h2 id="Mission-Control"><a href="#Mission-Control" class="headerlink" title="Mission Control"></a>Mission Control</h2><p>*Move left a space (desktop): <code>Ctrl+2</code></p>
+<p>*Move right a space (desktop): <code>Ctrl+3</code></p>
+<h1 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h1><p>split horizontally: <code>cmd+shift+D</code></p>
+<p>split vertically: <code>cmd+D</code></p>
+<p>select pane: <code>cmd+opt+arrow</code></p>
+<p>type command to multiple terminals at the same time: <code>cmd+shift+i</code></p>
 <blockquote>
 <p>same for cancel</p>
 </blockquote>
+<h1 id="Capslox"><a href="#Capslox" class="headerlink" title="Capslox"></a>Capslox</h1><h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><p>*Switch input source: <code>Caps+space</code></p>
+<h2 id="Movement"><a href="#Movement" class="headerlink" title="Movement"></a>Movement</h2><p>Move up: <code>Caps+e</code></p>
+<p>Move down: <code>Caps+d</code></p>
+<p>Move backward: <code>Caps+s</code></p>
+<p>Move forward: <code>Caps+f</code></p>
+<p>*Move backward one word: <code>Caps+w</code></p>
+<p>*Move forward one word: <code>Caps+r</code></p>
+<p>Move to the beginning of the line: <code>Caps+p</code></p>
+<p>Move to the end of the line: <code>Caps+;</code></p>
+<h2 id="Selection"><a href="#Selection" class="headerlink" title="Selection"></a>Selection</h2><p>Select current word (select backward): <code>Caps+c</code>    select and copy <code>Caps+c</code> then <code>Cmd+c</code></p>
+<h2 id="Deletion"><a href="#Deletion" class="headerlink" title="Deletion"></a>Deletion</h2><p>*Delete one word (backward): <code>Caps+&#39;</code></p>
+<p>*Delete to the beginning of the line: <code>Caps+[</code></p>
+<p>*Delete to the end of the line: <code>Caps+&#39;]</code></p>
+<blockquote>
+<p>System: delete line: <code>Cmd+Del</code>; new line: <code>Cmd+Enter</code></p>
+</blockquote>
+<h1 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h1><blockquote>
+<p>References: <a class="link"   target="_blank" rel="noopener" href="https://vim.rtorr.com/" >https://vim.rtorr.com/<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h2 id="Commonly-Used"><a href="#Commonly-Used" class="headerlink" title="Commonly Used"></a>Commonly Used</h2><ul>
+<li>Delete one word<ul>
+<li>Capslox: <code>Caps+w/r</code> to choose word, then <code>Caps+&#39;</code> to delete the word on the left of the cursor</li>
+<li>Vim: <code>w</code> and <code>r</code> to choose word, then <code>daw</code></li>
+</ul>
+</li>
+<li>Delete to the beginning/end<ul>
+<li>Capslox: <code>Caps+[</code>/<code>Caps+]</code></li>
+<li>Vim: <code>[</code>/<code>]</code> (mapped to <code>d0</code>/<code>D</code>)</li>
+</ul>
+</li>
+<li>Copy a word<ul>
+<li>Capslox: <code>Caps+w/r</code> to choose word, then <code>Caps+c</code> to select the word on the left of the cursor, then <code>Cmd+c</code> to copy</li>
+<li>Vim: <code>w</code> and <code>r</code> to choose word, then <code>yaw</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Global-1"><a href="#Global-1" class="headerlink" title="Global"></a>Global</h2><ul>
+<li>:sav[eas] file - save file as</li>
+<li>:ter[minal] - open a terminal window<ul>
+<li>Exit: <code>Ctrl+w</code> then <code>:q!</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Cursor-Movement"><a href="#Cursor-Movement" class="headerlink" title="Cursor Movement"></a>Cursor Movement</h2><ul>
+<li>h - move cursor left            4h: move cursor 4 character left</li>
+<li>j - move cursor down.        4j: move cursor 4 lines down</li>
+<li>k - move cursor up</li>
+<li>l - move cursor right</li>
+<li>ge - jump backwards to the end of a word.     Map w</li>
+<li>e - jump forwards to the end of a word.     *Map to r</li>
+<li>0 - jump to the start of the line.    Use I instead</li>
+<li>$ - jump to the end of the line.     Use A instead</li>
+<li>gg - go to the first line of the document</li>
+<li>G - go to the last line of the document</li>
+<li>Ctrl + d - move forward 1/2 a screen.      *Map to h</li>
+<li>Ctrl + u - move back 1/2 a screen.        *Map to l</li>
+<li>f: find, <code>fr</code> find next r</li>
+<li>fx - jump to next occurrence of character x (same line)          eg. yfr; dfr</li>
+<li>Fx - jump to previous occurrence of character x (same line)</li>
+<li>; - repeat previous f, t, F or T movement</li>
+<li>, - repeat previous f, t, F or T movement, backwards</li>
+</ul>
+<h2 id="Insert-Mode"><a href="#Insert-Mode" class="headerlink" title="Insert Mode"></a>Insert Mode</h2><ul>
+<li>i - insert before the cursor</li>
+<li>I - insert at the beginning of the line</li>
+<li>a - insert (append) after the cursor</li>
+<li>A - insert (append) at the end of the line</li>
+<li>o - append (open) a new line below the current line</li>
+<li>O - append (open) a new line above the current line</li>
+</ul>
+<h2 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h2><ul>
+<li>cc - change (replace) entire line      eg. caw: delete the word and enter insert mode; c4j</li>
+<li>ciw - change (replace) entire word</li>
+<li>u - undo</li>
+<li>U - restore (undo) last changed line</li>
+<li>Ctrl + r - redo</li>
+<li>. - repeat last command</li>
+</ul>
+<h2 id="Marking-Text-Visual-Mode"><a href="#Marking-Text-Visual-Mode" class="headerlink" title="Marking Text (Visual Mode)"></a>Marking Text (Visual Mode)</h2><ul>
+<li>v - start visual mode, mark lines, then do a command (like y-yank)</li>
+<li>o - move to other end of marked area</li>
+<li>aw - mark a word           eg. yaw: copy a word; caw</li>
+<li>ab - a block with ()</li>
+<li>aB - a block with {}</li>
+</ul>
+<h2 id="Visual-commands"><a href="#Visual-commands" class="headerlink" title="Visual commands"></a>Visual commands</h2><ul>
+<li>y - yank (copy) marked text</li>
+<li>d - delete marked text</li>
+</ul>
+<h2 id="Cut-and-paste"><a href="#Cut-and-paste" class="headerlink" title="Cut and paste"></a>Cut and paste</h2><ul>
+<li>yy - yank (copy) a line            eg. yaw: copy a word; y4k; yfr</li>
+<li>2yy - yank (copy) 2 lines</li>
+<li>yiw - yank (copy) word under the cursor</li>
+<li>yaw - yank (copy) word under the cursor and the space after or before it</li>
+<li>y$ - yank (copy) to end of line</li>
+<li>p - put (paste) the clipboard after cursor*</li>
+<li>P - put (paste) before cursor*</li>
+<li>dd - delete (cut) a line          eg. d8j, dfr</li>
+<li>2dd - delete (cut) 2 lines</li>
+<li>diw - delete (cut) word under the cursor</li>
+<li>D - delete (cut) to the end of the line</li>
+<li>x - delete (cut) character</li>
+</ul>
+<h2 id="Exiting"><a href="#Exiting" class="headerlink" title="Exiting"></a>Exiting</h2><ul>
+<li>:w - write (save) the file, but don’t exit</li>
+<li>:w !sudo tee % - write out the current file using sudo</li>
+<li>:wq - write (save) and quit</li>
+<li>:q - quit (fails if there are unsaved changes)</li>
+<li>:q! - quit and throw away unsaved changes</li>
+<li>:wqa - write (save) and quit on all tabs</li>
+</ul>
+<h2 id="Search-and-replace"><a href="#Search-and-replace" class="headerlink" title="Search and replace"></a>Search and replace</h2><ul>
+<li>/pattern - search for pattern</li>
+<li>?pattern - search backward for pattern</li>
+<li>n - repeat search in same direction</li>
+<li>N - repeat search in opposite direction</li>
+<li>:noh[lsearch] - remove highlighting of search matches</li>
+<li>:%s/old/new/g - replace all old with new throughout file</li>
+<li>:%s/old/new/gc - replace all old with new throughout file with confirmations</li>
+</ul>
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><ul>
+<li>:tabnew or :tabnew {page.words.file} - open a file in a new tab</li>
+<li>gt or :tabn[ext] - move to the next tab</li>
+<li>gT or :tabp[revious] - move to the previous tab</li>
+<li>#gt - move to tab number #</li>
+<li>:tabm[ove] # - move current tab to the #th position (indexed from 0)</li>
+<li>:tabc[lose] - close the current tab and all its windows</li>
+<li>:tabo[nly] - close all tabs except for the current one</li>
+</ul>
+<h2 id="Working-With-Multiple-Files"><a href="#Working-With-Multiple-Files" class="headerlink" title="Working With Multiple Files"></a>Working With Multiple Files</h2><ul>
+<li>:e[dit] file - edit a file in a new buffer (full screen, the previous file working on still exists under it)</li>
+<li>:bn[ext] - go to the next buffer</li>
+<li>:bp[revious] - go to the previous buffer</li>
+<li>:bd[elete] - delete a buffer (close a file)</li>
+<li>:b[uffer]# - go to a buffer by index #</li>
+<li>:b[uffer] file - go to a buffer by file</li>
+<li>:ls or :buffers - list all open buffers</li>
+<li>:sp[lit] file - open a file in a new buffer and split window</li>
+<li>:vs[plit] file - open a file in a new buffer and vertically split window</li>
+<li>:vert[ical] ba[ll] - edit all buffers as vertical windows</li>
+<li>:tab ba[ll] - edit all buffers as tabs</li>
+<li>Ctrl + ws - split window</li>
+<li>Ctrl + wv - split window vertically</li>
+<li>Ctrl + ww - switch windows</li>
+<li>Ctrl + wq - quit a window</li>
+<li>Ctrl + wx - exchange current window with next one</li>
+<li>Ctrl + w= - make all windows equal height &amp; width</li>
+<li>Ctrl + wh - move cursor to the left window (vertical split).   *Map to H</li>
+<li>Ctrl + wl - move cursor to the right window (vertical split).   *Map to L</li>
+<li>Ctrl + wj - move cursor to the window below (horizontal split).   *Map to J</li>
+<li>Ctrl + wk - move cursor to the window above (horizontal split).   *Map to K</li>
+<li>Ctrl + wH - make current window full height at far left (leftmost vertical window)</li>
+<li>Ctrl + wL - make current window full height at far right (rightmost vertical window)</li>
+<li>Ctrl + wJ - make current window full width at the very bottom (bottommost horizontal window)</li>
+<li>Ctrl + wK - make current window full width at the very top (topmost horizontal window)</li>
+</ul>
+<h1 id="NERDTree"><a href="#NERDTree" class="headerlink" title="NERDTree"></a>NERDTree</h1><blockquote>
+<p>References: <a class="link"   target="_blank" rel="noopener" href="https://cheatography.com/stepk/cheat-sheets/vim-nerdtree/" >https://cheatography.com/stepk/cheat-sheets/vim-nerdtree/<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h2 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h2><ul>
+<li>o: open in prev window (cursor goes in)</li>
+<li>go: preview (cursor not goes in)</li>
+<li>t: open in new tab</li>
+<li>T: open in new tab silently</li>
+<li>i: open split</li>
+<li>gi: preview split</li>
+<li>s: open vsplit</li>
+<li>gs: preview vsplit</li>
+</ul>
+<h2 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h2><ul>
+<li>o: open &amp; close</li>
+<li>O: recursively open</li>
+<li>x: close parent</li>
+<li>X: close all children recursively</li>
+</ul>
 
         </div>
 
@@ -400,7 +605,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim"><span class="nav-number">1.</span> <span class="nav-text">Vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iTerm2"><span class="nav-number">2.</span> <span class="nav-text">iTerm2</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac"><span class="nav-number">1.</span> <span class="nav-text">Mac</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mission-Control"><span class="nav-number">1.1.</span> <span class="nav-text">Mission Control</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#iTerm2"><span class="nav-number">2.</span> <span class="nav-text">iTerm2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capslox"><span class="nav-number">3.</span> <span class="nav-text">Capslox</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Global"><span class="nav-number">3.1.</span> <span class="nav-text">Global</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Movement"><span class="nav-number">3.2.</span> <span class="nav-text">Movement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selection"><span class="nav-number">3.3.</span> <span class="nav-text">Selection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deletion"><span class="nav-number">3.4.</span> <span class="nav-text">Deletion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim"><span class="nav-number">4.</span> <span class="nav-text">Vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Commonly-Used"><span class="nav-number">4.1.</span> <span class="nav-text">Commonly Used</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Global-1"><span class="nav-number">4.2.</span> <span class="nav-text">Global</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cursor-Movement"><span class="nav-number">4.3.</span> <span class="nav-text">Cursor Movement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Insert-Mode"><span class="nav-number">4.4.</span> <span class="nav-text">Insert Mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Editing"><span class="nav-number">4.5.</span> <span class="nav-text">Editing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Marking-Text-Visual-Mode"><span class="nav-number">4.6.</span> <span class="nav-text">Marking Text (Visual Mode)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-commands"><span class="nav-number">4.7.</span> <span class="nav-text">Visual commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cut-and-paste"><span class="nav-number">4.8.</span> <span class="nav-text">Cut and paste</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exiting"><span class="nav-number">4.9.</span> <span class="nav-text">Exiting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-and-replace"><span class="nav-number">4.10.</span> <span class="nav-text">Search and replace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tabs"><span class="nav-number">4.11.</span> <span class="nav-text">Tabs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Working-With-Multiple-Files"><span class="nav-number">4.12.</span> <span class="nav-text">Working With Multiple Files</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NERDTree"><span class="nav-number">5.</span> <span class="nav-text">NERDTree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Files"><span class="nav-number">5.1.</span> <span class="nav-text">Files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directories"><span class="nav-number">5.2.</span> <span class="nav-text">Directories</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>

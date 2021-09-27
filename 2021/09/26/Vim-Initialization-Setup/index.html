@@ -9,7 +9,7 @@
     
     <title>
         
-            Categories |
+            Vim Initialization Setup |
         
         Sungwa&#39;s Blog
     </title>
@@ -76,7 +76,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/categories"
                             >
                                 CATEGORIES
@@ -131,7 +131,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/categories">CATEGORIES</a>
                 </li>
             
@@ -161,13 +161,131 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="category-list-container">
-        <div class="category-list-content">
-            <ul class="all-category-list"><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Note/">Note</a><span class="all-category-list-count">9</span><ul class="all-category-list-child"><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Note/Database/">Database</a><span class="all-category-list-count">1</span><ul class="all-category-list-child"><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Note/Database/MySQL/">MySQL</a><span class="all-category-list-count">1</span></li></ul></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Note/Git/">Git</a><span class="all-category-list-count">1</span></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Note/Hexo/">Hexo</a><span class="all-category-list-count">3</span></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Note/Matlab/">Matlab</a><span class="all-category-list-count">1</span></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Note/Shortcut/">Shortcut</a><span class="all-category-list-count">1</span></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Note/Tools/">Tools</a><span class="all-category-list-count">3</span></li></ul></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Productivity/">Productivity</a><span class="all-category-list-count">1</span></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Setup/">Setup</a><span class="all-category-list-count">2</span><ul class="all-category-list-child"><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Setup/Raspberry/">Raspberry</a><span class="all-category-list-count">1</span></li></ul></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Tips/">Tips</a><span class="all-category-list-count">2</span></li></ul>
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Vim Initialization Setup</span>
         </div>
-        <div class="category-comments">
-            
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Sungwa Yu</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i> Published 09-26-2021
+    </span>
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i> Modified 09-26-2021
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Setup/">Setup</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Vim/">Vim</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Setup/">Setup</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i> <span>87 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i> <span>1 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="How-It-Looks-Like"><a href="#How-It-Looks-Like" class="headerlink" title="How It Looks Like"></a>How It Looks Like</h1><p><img src="Snipaste_2021-09-26_11-25-17.png" alt="Snipaste_2021-09-26_11-25-17"></p>
+<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><blockquote>
+<p>Notes: </p>
+<ul>
+<li>Some plugins might need have nodejs installed.</li>
+<li><code>curl -sL install-node.now.sh/lts | bash</code></li>
+<li>Might need to install the <a class="link"   target="_blank" rel="noopener" href="https://github.com/Lokaltog/powerline-fonts" >powerline font<i class="fas fa-external-link-alt"></i></a> for the statusline plugin. </li>
+<li>If use theme Nord for Vim, the terminal color theme should also be <a class="link"   target="_blank" rel="noopener" href="https://github.com/arcticicestudio/nord-terminal-app" >Nord<i class="fas fa-external-link-alt"></i></a>. </li>
+</ul>
+</blockquote>
+<ol>
+<li>Install Vim-Plug.</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fLo ~<span class="regexp">/.vim/</span>autoload/plug.vim --create-dirs \</span><br><span class="line">    https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/junegunn/</span>vim-plug<span class="regexp">/master/</span>plug.vim</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/junegunn/vim-plug" >https://github.com/junegunn/vim-plug<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<ol start="2">
+<li>Put the <code>.vimrc</code> (<a class="link"   target="_blank" rel="noopener" href="https://github.com/SungwaYu/vim_config" >my config<i class="fas fa-external-link-alt"></i></a>) in the ~ directory. </li>
+<li>Vim into <code>.vimrc</code> and run <code>:PlugInstall</code>. </li>
+</ol>
+
         </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/09/23/Installing-Docker-on-Raspberry-Pi-4/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Installing Docker on Raspberry Pi 4</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
     </div>
 </div>
 
@@ -203,6 +321,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -249,6 +384,14 @@
 
     </div>
 
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#How-It-Looks-Like"><span class="nav-number">1.</span> <span class="nav-text">How It Looks Like</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Installation"><span class="nav-number">2.</span> <span class="nav-text">Installation</span></a></li></ol>
+    </div>
+</div>
+        </aside>
     
 
     <div class="image-viewer-container">
@@ -318,6 +461,14 @@
 
 
 <div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
     
 </div>
 
