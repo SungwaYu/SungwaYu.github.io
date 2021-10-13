@@ -9,7 +9,7 @@
     
     <title>
         
-            Vim Initialization Setup |
+            Deploy Docker Images to EC2 (With Data Persistance) |
         
         Sungwa&#39;s Blog
     </title>
@@ -164,7 +164,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Vim Initialization Setup</span>
+            <span class="title-hover-animation">Deploy Docker Images to EC2 (With Data Persistance)</span>
         </div>
 
         
@@ -179,10 +179,10 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i> Published 09-26-2021
+        <i class="fas fa-edit"></i> Published 10-12-2021
     </span>
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i> Modified 09-26-2021
+        <i class="fas fa-edit"></i> Modified 10-12-2021
     </span>
     
         <span class="article-categories article-meta-item">
@@ -190,7 +190,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/Setup/">Setup</a>
+                        <a href="/categories/Note/">Note</a>
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Note/Docker/">Docker</a>
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Note/AWS/">AWS</a>
                     </li>
                 
             </ul>
@@ -202,11 +210,15 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Vim/">Vim</a>
+                        <a href="/tags/Docker/">Docker</a>
                     </li>
                 
                     <li>
-                        | <a href="/tags/Setup/">Setup</a>
+                        | <a href="/tags/AWS/">AWS</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Deployment/">Deployment</a>
                     </li>
                 
             </ul>
@@ -216,12 +228,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>87 Words</span>
+            <i class="fas fa-file-word"></i> <span>600 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i> <span>1 Mins</span>
+            <i class="fas fa-clock"></i> <span>3 Mins</span>
         </span>
     
     
@@ -237,27 +249,82 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="How-It-Looks-Like"><a href="#How-It-Looks-Like" class="headerlink" title="How It Looks Like"></a>How It Looks Like</h1><p><img src="Snipaste_2021-09-26_11-25-17.png" alt="Snipaste_2021-09-26_11-25-17"></p>
-<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><blockquote>
-<p>Notes: </p>
-<ul>
-<li>Some plugins might need have nodejs installed.</li>
-<li><code>curl -sL install-node.now.sh/lts | bash</code></li>
-<li>Might need to install the <a class="link"   target="_blank" rel="noopener" href="https://github.com/Lokaltog/powerline-fonts" >powerline font<i class="fas fa-external-link-alt"></i></a> for the statusline plugin. </li>
-<li>If use theme Nord for Vim, the terminal color theme should also be <a class="link"   target="_blank" rel="noopener" href="https://github.com/arcticicestudio/nord-terminal-app" >Nord<i class="fas fa-external-link-alt"></i></a>. </li>
-</ul>
+            <h2 id="Overall-Procedures"><a href="#Overall-Procedures" class="headerlink" title="Overall Procedures"></a>Overall Procedures</h2><blockquote>
+<p>Assume already setup AWS Cli</p>
 </blockquote>
 <ol>
-<li>Install Vim-Plug.</li>
+<li>Build image to AWS ECR.</li>
+<li>Create Task Definitions in ECS that bind to images.</li>
+<li>Create Cluster with service that uses the task definition.</li>
+<li>Access to EC2 instance.</li>
 </ol>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fLo ~<span class="regexp">/.vim/</span>autoload/plug.vim --create-dirs \</span><br><span class="line">    https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/junegunn/</span>vim-plug<span class="regexp">/master/</span>plug.vim</span><br></pre></td></tr></table></figure>
+<h2 id="Build-Image-to-AWS-ECR"><a href="#Build-Image-to-AWS-ECR" class="headerlink" title="Build Image to AWS ECR"></a>Build Image to AWS ECR</h2><ol>
+<li>Search ECR in AWS services.</li>
+<li>Create a repository.</li>
+<li>Go inside the repository.</li>
+<li>Click <code>View push command</code> on the top right. (Need to set up AWS Cli).</li>
+</ol>
+<h2 id="Create-Task-Definitions"><a href="#Create-Task-Definitions" class="headerlink" title="Create Task Definitions"></a>Create Task Definitions</h2><ol>
+<li><p>Dockerfile <code>EXPOSE &lt;PORT&gt;</code> if not use default.</p>
+</li>
+<li><p>Create task definition under ECS clusters.</p>
+<p><img src="image-20210930235341379.png" alt="image-20210930235341379"></p>
 <blockquote>
-<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/junegunn/vim-plug" >https://github.com/junegunn/vim-plug<i class="fas fa-external-link-alt"></i></a></p>
+<p>If no mention, leave as default</p>
 </blockquote>
-<ol start="2">
-<li>Put the <code>.vimrc</code> (<a class="link"   target="_blank" rel="noopener" href="https://github.com/SungwaYu/vim_config" >my config<i class="fas fa-external-link-alt"></i></a>) in the ~ directory. </li>
-<li>Vim into <code>.vimrc</code> and run <code>:PlugInstall</code>. </li>
+<ol>
+<li><p>Network mode <code>default</code>.</p>
+</li>
+<li><p>Requires compatibilities <code>EC2</code>.</p>
+</li>
+<li><p>Task size: must be (much) less than cluster EC2 instance size since the install itself also uses some memories (can just set this and don’t need to set the memory size under container definition).</p>
+</li>
+<li><p>Container definition: memory (hard/soft) must be less than or equal to the task size, cpu/gpu leave blank (for EC2, can just specify this and not specify the task size but the container memory (hard/sorft) should also much less than the cluster instance memory). <strong>Under the Storage and Logging, check the “Log configuration” in order to see the log later in CloudWatch -&gt; Logs Group/Insight</strong>.</p>
+</li>
+<li><p>Port mapping: host (EC2 instance) to container.</p>
+</li>
+<li><p><strong>Attach volume</strong>, choose volume type as “Docker”, choose “shared” scope  (so that it can be persistence) then check “Enable auto-provisioning”. With this, need to set the “Mount Point” inside the “Container Definition”. An example: </p>
+</li>
 </ol>
+<p><img src="Snipaste_2021-10-13_00-27-14.png" alt="Snipaste_2021-10-13_00-27-14"></p>
+</li>
+</ol>
+<p>   <img src="Snipaste_2021-10-11_16-15-29.png" alt="Snipaste_2021-10-11_16-15-29"></p>
+<h2 id="Creating-Cluster"><a href="#Creating-Cluster" class="headerlink" title="Creating Cluster"></a>Creating Cluster</h2><ol>
+<li><p>Cluster template: EC2 Linux + Networking.</p>
+</li>
+<li><p>Choose instance type, choose number of instances (be careful not to choose the ARM architecture). </p>
+</li>
+<li><p>Create a key pair (can be found under Network &amp; Security on the left menu in EC2 service). </p>
+<blockquote>
+<p>To ssh to EC2 instance, needed to give a key pair when creating the cluster. If lost, may need to recreate the cluster (couldn’t change the key).<br><a class="link"   target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" >https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html<i class="fas fa-external-link-alt"></i></a><br>If you’ve lost your existing private key or you launched your instance without a key pair, you won’t be able connect to your instance and therefore won’t be able to add or replace a key pair.</p>
+</blockquote>
+</li>
+<li><p>Networking: VPC chooses the one has (172.,,,,), then subnet choose the first one. </p>
+</li>
+<li><p>Create a security group (search security group in the search bar) and open ports, then choose that security group while creating the cluster.</p>
+</li>
+<li><p>I set to open all ports for testing (Convenience).</p>
+<p><img src="image-20210930234926716.png" alt="image-20210930234926716"></p>
+</li>
+</ol>
+<h3 id="Run-ECR-Container-on-Cluster"><a href="#Run-ECR-Container-on-Cluster" class="headerlink" title="Run ECR Container on Cluster"></a>Run ECR Container on Cluster</h3><p>Service is the long-run of task definition. When a task down, service will start that task again to ensure the service always running. For running a docker image on ECS, a task (definition) needs to be created. You can just run a task from the task definition but if it’s down, it’s down (won’t restart itself). With service, a task (definition) is bound to a service. When a cluster specified a service, it will ensure the service always running, ie. the task in the service is always running (will restart if it goes down).</p>
+<h4 id="Create-service"><a href="#Create-service" class="headerlink" title="Create service."></a>Create service.</h4><ol>
+<li>Launch type EC2.</li>
+<li>Choose task definition.</li>
+<li>Choose cluster.</li>
+<li>Service name.</li>
+<li>Service type: Daemon (run one copy).</li>
+<li>Other leave as default.</li>
+</ol>
+<h2 id="Access-EC2-Instance"><a href="#Access-EC2-Instance" class="headerlink" title="Access EC2 Instance"></a>Access EC2 Instance</h2><p><strong>Note</strong>: <strong>The public IP is found under the <code>ec2 instance</code> (search ec2 in the search bar, click on instance id, then the public IPV4 is the address), not the task ip address in the cluster page</strong></p>
+<ol>
+<li>Search EC2.</li>
+<li>Go to Instance under instances.</li>
+<li>Choose the instance and click “Connect”. </li>
+<li>Use SSH Client to connect. </li>
+</ol>
+<p>To access container (task), use <code>docker</code> command in EC2. <strong>Same as using docker on your local machine</strong>.</p>
 
         </div>
 
@@ -269,13 +336,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/10/12/Deploy-Docker-Images-to-EC2/"
+                           href="/2021/10/13/Docker-Basic-Use-and-Command/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Deploy Docker Images to EC2 (With Data Persistance)</span>
+                                <span class="post-nav-title-item">Docker Basic Use and Command</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -285,10 +352,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/23/Installing-Docker-on-Raspberry-Pi-4/"
+                           href="/2021/09/26/Vim-Initialization-Setup/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Installing Docker on Raspberry Pi 4</span>
+                                <span class="post-nav-title-item">Vim Initialization Setup</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -403,7 +470,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#How-It-Looks-Like"><span class="nav-number">1.</span> <span class="nav-text">How It Looks Like</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Installation"><span class="nav-number">2.</span> <span class="nav-text">Installation</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overall-Procedures"><span class="nav-number">1.</span> <span class="nav-text">Overall Procedures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-Image-to-AWS-ECR"><span class="nav-number">2.</span> <span class="nav-text">Build Image to AWS ECR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-Task-Definitions"><span class="nav-number">3.</span> <span class="nav-text">Create Task Definitions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Creating-Cluster"><span class="nav-number">4.</span> <span class="nav-text">Creating Cluster</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-ECR-Container-on-Cluster"><span class="nav-number">4.1.</span> <span class="nav-text">Run ECR Container on Cluster</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-service"><span class="nav-number">4.1.1.</span> <span class="nav-text">Create service.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-EC2-Instance"><span class="nav-number">5.</span> <span class="nav-text">Access EC2 Instance</span></a></li></ol>
     </div>
 </div>
         </aside>
